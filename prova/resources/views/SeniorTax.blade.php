@@ -6,7 +6,7 @@
     <title>Employee Details - Salary Increase</title>
 </head>
 <body>
-<h2>Position: Junior</h2>
+<h2>Position: Senior</h2>
 
     <p>Name: {{ $employee['name'] }}</p>
     <p>Salary: {{ $employee['salary'] }}</p>

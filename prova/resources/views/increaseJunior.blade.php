@@ -6,7 +6,6 @@
     <title>Employee Details - Salary Increase</title>
 </head>
 <body>
-    <h1>Employee Details - Salary Increase</h1>
 <h2>Position: Junior</h2>
 
     <p>Name: {{ $employee['name'] }}</p>

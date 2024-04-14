@@ -6,7 +6,6 @@
     <title>Home screen - Employee informations</title>
 </head>
 <body>
-    <h1>Home screen - Employee informations</h1>
 <h2>Position: Junior</h2>
 
     <p>Name: {{ $employee['name'] }}</p>

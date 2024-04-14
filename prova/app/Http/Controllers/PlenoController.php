@@ -7,31 +7,31 @@ use Illuminate\Http\Request;
 abstract class PlenoController extends Controller
 {
 
-    public function aumentarSalario(Request $request, string $nome, int $salario, int $numeroDeInscricao) {
-        $horastrabalhadas = $request->query('horastrabalhadas');
+    public function increaseSalary(Request $request, string $name, int $salary, int $descnumber) {
+        $workedHours = $request->query('workedHours');
     
-        $pleno = new Pleno($nome, $salario, $numeroDeInscricao);
-        return view('aumentaSalario')
-            ->with('funcionario', $pleno->mostrar($horastrabalhadas))
-            ->with('aumentarSalario',$pleno->aumentarSalario($horastrabalhadas)); 
+        $pleno = new Pleno($name, $salary, $descnumber);
+        return view('increaseSalary')
+            ->with('employee', $pleno->show($workedHours))
+            ->with('increaseSalary', $pleno->increaseSalary($workedHours)); 
     }
     
-    public function mostrarInformacoes(Request $request,string $nome,int $salario,int $numeroDeInscricao) {
-        $horastrabalhadas = $request->query('horastrabalhadas');
+    public function showInformation(Request $request, string $name, int $salary, int $descnumber) {
+        $workedHours = $request->query('workedHours');
       
-        $pleno = new Pleno($nome, $salario, $numeroDeInscricao);
-        return view('funcionario')
-            ->with('funcionario', $pleno->mostrar($horastrabalhadas));
+        $pleno = new Pleno($name, $salary, $descnumber);
+        return view('employee')
+            ->with('employee', $pleno->show($workedHours));
     }
 
-    public function calcularImposto(Request $request, string $nome, int $salario, int $numeroDeInscricao) {
-        $horastrabalhadas = $request->query('horastrabalhadas');
+    public function Taxcalc(Request $request, string $name, int $salary, int $descnumber) {
+        $workedHours = $request->query('workedHours');
     
-        $pleno = new Pleno($nome, $salario, $numeroDeInscricao);
+        $pleno = new Pleno($name, $salary, $descnumber);
     
-        return view('calcularImposto')
-            ->with('funcionario', $pleno->mostrar($horastrabalhadas))
-            ->with('impostos', $pleno->calcularImposto($horastrabalhadas));
+        return view('Taxcalc')
+            ->with('employee', $pleno->show($workedHours))
+            ->with('taxs', $pleno->Taxcalc($workedHours));
     }
     
     
